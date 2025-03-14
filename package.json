@@ -1,0 +1,14 @@
+{
+  "name": "smart-stock",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "devDependencies": {
+    "tailwindcss": "^4.0.14"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.14"
+  }
+}

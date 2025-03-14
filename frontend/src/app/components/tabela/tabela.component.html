@@ -1,0 +1,22 @@
+<section class="mb-6">
+  <h2 class="text-xl font-semibold text-gray-800">Produtos em Estoque</h2>
+  <table class="min-w-full border border-gray-300 mt-2">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border p-2">ID</th>
+        <th class="border p-2">Nome</th>
+        <th class="border p-2">Estoque</th>
+        <th class="border p-2">Preço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produto of produtos">
+        <td class="border p-2">{{ produto.id }}</td>
+        <td class="border p-2">{{ produto.nome }}</td>
+        <td class="border p-2">{{ produto.estoque }}</td>
+        <td class="border p-2">R$ {{ produto.preco | number:'1.2-2' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
