@@ -1,6 +1,10 @@
 <section class="mb-6">
-  <h2 class="text-xl font-semibold text-gray-800">Produtos em Estoque</h2>
-  <table class="min-w-full border border-gray-300 mt-2">
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-xl font-semibold text-gray-800">Produtos em Estoque</h2>
+    <button (click)="abrirModal()" class="bg-blue-500 text-white px-4 py-2 rounded">Adicionar Produto</button>
+  </div>
+
+  <table class="min-w-full border border-gray-300">
     <thead>
       <tr class="bg-gray-200">
         <th class="border p-2">ID</th>
@@ -18,5 +22,41 @@
       </tr>
     </tbody>
   </table>
+  
 </section>
+
+<!-- Modal -->
+<!-- Fundo escuro -->
+<div *ngIf="modalAberto" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
+  <div class="bg-white p-6 rounded-lg shadow-lg w-96"> <!-- Adicionado p-6 para espaçamento interno -->
+    <h3 class="text-lg font-semibold mb-4">Cadastrar Produto</h3>
+    
+    <form (ngSubmit)="cadastrarProduto()">
+      <div class="mb-4">
+        <label class="block text-sm font-medium">Nome:</label>
+        <input type="text" [(ngModel)]="novoProduto.nome" name="nome" class="w-full border p-2 rounded" required>
+      </div>
+      
+      <div class="mb-4">
+        <label class="block text-sm font-medium">Estoque:</label>
+        <input type="number" [(ngModel)]="novoProduto.estoque" name="estoque" class="w-full border p-2 rounded" required>
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-sm font-medium">Preço:</label>
+        <input type="number" [(ngModel)]="novoProduto.preco" name="preco" class="w-full border p-2 rounded" required>
+      </div>
+
+      <div class="flex justify-end">
+        <button type="button" (click)="fecharModal()" class="bg-gray-300 text-gray-800 px-4 py-2 rounded mr-2 hover:bg-gray-400">
+          Cancelar
+        </button>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+          Salvar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
 

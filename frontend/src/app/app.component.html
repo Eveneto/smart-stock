@@ -197,6 +197,14 @@
   <!-- Importação de Componentes -->
   <app-tabela></app-tabela>
   <app-grafico></app-grafico>
+
+  <app-toast #toast></app-toast>
+
+  <button (click)="toast.exibirMensagem('Produto cadastrado com sucesso!')" 
+    class="bg-blue-500 text-white px-4 py-2 rounded">
+    Testar Toast
+  </button>
+
 </main>
 
 <footer class="mt-8 p-4 text-center bg-gray-100 text-gray-600">

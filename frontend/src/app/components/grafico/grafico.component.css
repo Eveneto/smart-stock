@@ -39,4 +39,8 @@
   .hover\:bg-blue-700:hover {
     background-color: #1e40af;
   }
+
+  .ml-20{
+    margin-left: 20px;
+  }
   
