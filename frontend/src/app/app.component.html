@@ -177,39 +177,44 @@
   }
 </style> -->
 
-<header class="p-4 bg-blue-600 text-white flex justify-between items-center">
-  <h1 class="text-2xl font-bold">Gestão Inteligente de Estoque</h1>
+<header class="header">
+  <h1 class="header-title">Smart Stock Management</h1>
   <nav>
-    <ul class="flex gap-4">
-      <li><a href="#" class="hover:underline">Início</a></li>
-      <li><a href="#" class="hover:underline">Relatórios</a></li>
-      <li><a href="#" class="hover:underline">Configurações</a></li>
+    <ul class="nav-list">
+      <li><a href="#" class="nav-link">Home</a></li>
+      <li><a href="#" class="nav-link">Reports</a></li>
+      <li><a href="#" class="nav-link">Settings</a></li>
     </ul>
   </nav>
 </header>
 
-<main class="p-4">
-  <section class="mb-6">
-    <h2 class="text-xl font-semibold text-gray-800">Visão Geral</h2>
-    <p class="text-gray-600">Bem-vindo ao sistema de gestão inteligente de estoque. Aqui você pode acompanhar suas vendas, verificar níveis de estoque e gerar relatórios.</p>
+<main class="container">
+  <!-- <div class="language-buttons">
+    <button (click)="mudarIdioma('pt')" class="btn-lang">🇧🇷 PT</button>
+    <button (click)="mudarIdioma('en')" class="btn-lang">🇺🇸 EN</button>
+  </div> -->
+
+  <section class="overview">
+    <h2 class="section-title">Overview</h2>
+    <p class="section-text">
+      Welcome to the smart stock management system. Here you can track your sales, check stock levels, and generate reports.
+    </p>
   </section>
 
-  <!-- Importação de Componentes -->
   <app-tabela></app-tabela>
   <app-grafico></app-grafico>
-
   <app-toast #toast></app-toast>
 
-  <button (click)="toast.exibirMensagem('Produto cadastrado com sucesso!')" 
-    class="bg-blue-500 text-white px-4 py-2 rounded">
-    Testar Toast
+  <button (click)="toast.exibirMensagem('Product successfully registered!')" class="btn-primary">
+    Test Toast
   </button>
-
 </main>
 
-<footer class="mt-8 p-4 text-center bg-gray-100 text-gray-600">
-  © 2025 Gestão Inteligente de Estoque
+<footer class="footer">
+  © 2025 Smart Stock Management
 </footer>
+
+
 
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

@@ -1,0 +1,25 @@
+{
+  "TITLE": "Gestão Inteligente de Estoque",
+  "WELCOME": "Bem-vindo ao sistema de gestão de estoque.",
+  
+  "MENU": {
+    "HOME": "Início",
+    "REPORTS": "Relatórios",
+    "SETTINGS": "Configurações"
+  },
+
+  "PRODUCT_REGISTERED": "Produto cadastrado com sucesso!",
+  "SALES_REPORT": "Relatório de Vendas",
+  "EXPORT_PDF": "Exportar PDF",
+  "RECENT_SALES": "Vendas Recentes",
+  "SALES_TABLE": "Tabela de Vendas",
+  "DAY": "Dia",
+  "SALES": "Vendas",
+  "CANCEL": "Cancelar",
+  "SAVE": "Salvar",
+  
+  "LANGUAGE": {
+    "PT": "Português",
+    "EN": "Inglês"
+  }
+}

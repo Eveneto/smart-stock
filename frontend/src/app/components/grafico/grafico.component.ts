@@ -10,9 +10,9 @@ import autoTable from 'jspdf-autotable';
 @Component({
   selector: 'app-grafico',
   standalone: true,
-  imports: [CommonModule, BaseChartDirective], // BaseChartDirective está correto
+  imports: [CommonModule, BaseChartDirective], // BaseChartDirective is correct
   templateUrl: './grafico.component.html',
-  styleUrls: ['./grafico.component.css'] // Corrigido para 'styleUrls' (plural)
+  styleUrls: ['./grafico.component.css'] // Corrected to 'styleUrls' (plural)
 })
 export class GraficoComponent {
   @ViewChild('graficoCanvas', { static: false }) graficoCanvas!: ElementRef;
@@ -22,58 +22,58 @@ export class GraficoComponent {
     responsive: true,
     plugins: {
       legend: {
-        display: true // Exibir legenda do gráfico
+        display: true // Display chart legend
       }
     }
   };
 
-  public barChartLabels: string[] = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
+  public barChartLabels: string[] = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   barChartType: 'bar' = 'bar';
 
   public barChartData: ChartData<'bar'> = {
     labels: this.barChartLabels,
     datasets: [
-      { data: [120, 150, 180, 200, 170, 220, 250], label: 'Vendas Recentes', backgroundColor: '#4F46E5' } // Cor do gráfico
+      { data: [120, 150, 180, 200, 170, 220, 250], label: 'Recent Sales', backgroundColor: '#4F46E5' } // Chart color
     ]
   };
 
   constructor() {
-    console.log('Configuração do gráfico:', this.barChartData);
+    console.log('Chart configuration:', this.barChartData);
   }
 
   gerarPDF() {
     const doc = new jsPDF();
 
-    // Adiciona título
+    // Add title
     doc.setFontSize(16);
-    doc.text('Relatório de Vendas', 10, 10);
+    doc.text('Sales Report', 10, 10);
 
-    // Captura e adiciona o gráfico ao PDF
+    // Capture and add the chart to the PDF
     html2canvas(this.graficoCanvas.nativeElement).then((canvas) => {
       const imgData = canvas.toDataURL('image/png');
-      doc.addImage(imgData, 'PNG', 10, 20, 180, 120); // Posição e tamanho do gráfico no PDF
+      doc.addImage(imgData, 'PNG', 10, 20, 180, 120); // Chart position and size in the PDF
 
-      // Captura e adiciona a tabela ao PDF
-      doc.text('Dados da Tabela', 10, 150); // Título da tabela
+      // Capture and add the table to the PDF
+      doc.text('Table Data', 10, 150); // Table title
       autoTable(doc, { html: this.tabela.nativeElement, startY: 160 });
 
-      doc.save('relatorio_vendas.pdf');
+      doc.save('sales_report.pdf');
     });
   }
 
   exportarCSV() {
     let csvContent = "data:text/csv/charset=utf-8";
-    csvContent += "Dia,Vendas\n"; // Cabeçalho
+    csvContent += "Day,Sales\n"; // Header
 
     this.barChartData.datasets[0].data.forEach((venda, i) => {
       const linha = `${this.barChartLabels[i]},${venda}`;
-      csvContent += linha +"\n";
+      csvContent += linha + "\n";
     });
 
     const encodedUri = encodeURI(csvContent)
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "relatorio_vendas.csv");
+    link.setAttribute("download", "sales_report.csv");
     document.body.appendChild(link);
     link.click()
   }

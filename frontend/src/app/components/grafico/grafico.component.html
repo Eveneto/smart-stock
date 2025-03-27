@@ -1,5 +1,5 @@
 <section class="mb-6">
-    <h2 class="text-xl font-semibold text-gray-800">Vendas Recentes</h2>
+    <h2 class="text-xl font-semibold text-gray-800">Recent Sales</h2>
     <div #graficoCanvas class="bg-white p-4 rounded shadow-md">
         <canvas baseChart
             [data]="barChartData"
@@ -9,31 +9,30 @@
     </div>
 </section>
 
-<!-- Tabela -->
+<!-- Table -->
 <section class="mb-6">
-    <h2 class="text-xl font-semibold text-gray-800">Tabela de Vendas</h2>
+    <h2 class="text-xl font-semibold text-gray-800">Sales Table</h2>
     <table #tabela class="min-w-full border-collapse border border-gray-300">
         <thead>
             <tr class="bg-gray-200">
-                <th class="border border-gray-300 px-4 py-2">Dia</th>
-                <th class="border border-gray-300 px-4 py-2">Vendas</th>
+                <th class="border border-gray-300 px-4 py-2">Day</th>
+                <th class="border border-gray-300 px-4 py-2">Sales</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let venda of barChartData.datasets[0].data; let i = index">
+            <tr *ngFor="let sale of barChartData.datasets[0].data; let i = index">
                 <td class="border border-gray-300 px-4 py-2">{{ barChartLabels[i] }}</td>
-                <td class="border border-gray-300 px-4 py-2">{{ venda }}</td>
+                <td class="border border-gray-300 px-4 py-2">{{ sale }}</td>
             </tr>
         </tbody>
     </table>
 </section>
 
-<!-- Botão de Exportação -->
+<!-- Export Button -->
 <button (click)="gerarPDF()" class="bg-blue-500 text-white px-4 py-2 rounded">
-    Exportar PDF
+    Export PDF
 </button>
 
 <button (click)="exportarCSV()" class="bg-blue-500 text-white px-4 py-2 rounded ml-20">
-    Exportar CSV
+    Export CSV
 </button>
-

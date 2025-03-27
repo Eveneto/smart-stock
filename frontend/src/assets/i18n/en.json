@@ -1,0 +1,25 @@
+{
+  "TITLE": "Smart Stock Management",
+  "WELCOME": "Welcome to the stock management system.",
+
+  "MENU": {
+    "HOME": "Home",
+    "REPORTS": "Reports",
+    "SETTINGS": "Settings"
+  },
+
+  "PRODUCT_REGISTERED": "Product successfully registered!",
+  "SALES_REPORT": "Sales Report",
+  "EXPORT_PDF": "Export PDF",
+  "RECENT_SALES": "Recent Sales",
+  "SALES_TABLE": "Sales Table",
+  "DAY": "Day",
+  "SALES": "Sales",
+  "CANCEL": "Cancel",
+  "SAVE": "Save",
+  
+  "LANGUAGE": {
+    "PT": "Portuguese",
+    "EN": "English"
+  }
+}

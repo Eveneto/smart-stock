@@ -12,7 +12,7 @@ export class ToastComponent {
   mostrar = false;
   mensagem = '';
 
-  exibirMensagem(mensagem: string){
+  exibirMensagem(mensagem: string, tipo: string = 'info'){
     this.mensagem = mensagem;
     this.mostrar = true;
 

@@ -1,16 +1,18 @@
 <section class="mb-6">
   <div class="flex justify-between items-center mb-4">
-    <h2 class="text-xl font-semibold text-gray-800">Produtos em Estoque</h2>
-    <button (click)="abrirModal()" class="bg-blue-500 text-white px-4 py-2 rounded">Adicionar Produto</button>
+    <h2 class="text-xl font-semibold text-gray-800">Products in Stock</h2>
+    <button (click)="abrirModal()" class="bg-blue-500 text-white px-4 py-2 rounded">Add Product</button>
   </div>
+
+  <app-toast #toast></app-toast>
 
   <table class="min-w-full border border-gray-300">
     <thead>
       <tr class="bg-gray-200">
         <th class="border p-2">ID</th>
-        <th class="border p-2">Nome</th>
-        <th class="border p-2">Estoque</th>
-        <th class="border p-2">Preço</th>
+        <th class="border p-2">Name</th>
+        <th class="border p-2">Stock</th>
+        <th class="border p-2">Price</th>
       </tr>
     </thead>
     <tbody>
@@ -18,45 +20,42 @@
         <td class="border p-2">{{ produto.id }}</td>
         <td class="border p-2">{{ produto.nome }}</td>
         <td class="border p-2">{{ produto.estoque }}</td>
-        <td class="border p-2">R$ {{ produto.preco | number:'1.2-2' }}</td>
+        <td class="border p-2">$ {{ produto.preco | number:'1.2-2' }}</td>
       </tr>
     </tbody>
   </table>
-  
 </section>
 
 <!-- Modal -->
-<!-- Fundo escuro -->
+<!-- Dark background -->
 <div *ngIf="modalAberto" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
-  <div class="bg-white p-6 rounded-lg shadow-lg w-96"> <!-- Adicionado p-6 para espaçamento interno -->
-    <h3 class="text-lg font-semibold mb-4">Cadastrar Produto</h3>
+  <div class="bg-white p-6 rounded-lg shadow-lg w-96"> <!-- Added p-6 for internal spacing -->
+    <h3 class="text-lg font-semibold mb-4">Register Product</h3>
     
     <form (ngSubmit)="cadastrarProduto()">
       <div class="mb-4">
-        <label class="block text-sm font-medium">Nome:</label>
+        <label class="block text-sm font-medium">Name:</label>
         <input type="text" [(ngModel)]="novoProduto.nome" name="nome" class="w-full border p-2 rounded" required>
       </div>
       
       <div class="mb-4">
-        <label class="block text-sm font-medium">Estoque:</label>
+        <label class="block text-sm font-medium">Stock:</label>
         <input type="number" [(ngModel)]="novoProduto.estoque" name="estoque" class="w-full border p-2 rounded" required>
       </div>
 
       <div class="mb-6">
-        <label class="block text-sm font-medium">Preço:</label>
+        <label class="block text-sm font-medium">Price:</label>
         <input type="number" [(ngModel)]="novoProduto.preco" name="preco" class="w-full border p-2 rounded" required>
       </div>
 
       <div class="flex justify-end">
         <button type="button" (click)="fecharModal()" class="bg-gray-300 text-gray-800 px-4 py-2 rounded mr-2 hover:bg-gray-400">
-          Cancelar
+          Cancel
         </button>
         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-          Salvar
+          Save
         </button>
       </div>
     </form>
   </div>
 </div>
-
-

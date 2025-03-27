@@ -1,0 +1,100 @@
+/* Cabeçalho */
+.header {
+    padding: 16px;
+    background-color: #2563eb; /* bg-blue-600 */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: bold;
+  }
+  
+  .nav-list {
+    display: flex;
+    gap: 16px; /* gap-4 */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline; /* hover:underline */
+  }
+  
+  /* Conteúdo Principal */
+  .container {
+    padding: 16px; /* p-4 */
+  }
+  
+  /* Botões de idioma */
+  .language-buttons {
+    margin-bottom: 16px; /* mb-4 */
+    display: flex;
+    gap: 8px; /* flex gap-2 */
+  }
+  
+  .btn-lang {
+    background-color: #d1d5db; /* bg-gray-300 */
+    color: black;
+    padding: 8px 16px; /* px-4 py-2 */
+    border-radius: 4px; /* rounded */
+    border: 1px solid #9ca3af; /* border-gray-400 */
+    cursor: pointer;
+  }
+  
+  .btn-lang:hover {
+    background-color: #9ca3af; /* hover:bg-gray-400 */
+  }
+  
+  /* Seção de visão geral */
+  .overview {
+    margin-bottom: 24px; /* mb-6 */
+  }
+  
+  .section-title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    color: #1f2937; /* text-gray-800 */
+  }
+  
+  .section-text {
+    color: #4b5563; /* text-gray-600 */
+  }
+  
+  /* Botão Principal */
+  .btn-primary {
+    margin-top: 16px; /* mt-4 */
+    background-color: #3b82f6; /* bg-blue-500 */
+    color: white;
+    padding: 8px 16px; /* px-4 py-2 */
+    border-radius: 4px; /* rounded */
+    border: 1px solid #1e40af; /* border-blue-700 */
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #2563eb; /* hover:bg-blue-600 */
+  }
+  
+  /* Rodapé */
+  .footer {
+    margin-top: 32px; /* mt-8 */
+    padding: 16px; /* p-4 */
+    text-align: center;
+    background-color: #f3f4f6; /* bg-gray-100 */
+    color: #6b7280; /* text-gray-600 */
+  }
+
+  .container{
+    min-width: 100%;
+  }
+  
