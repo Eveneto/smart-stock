@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterModule } from '@angular/router'; // Adicionado RouterModule
 import { TabelaComponent } from './components/tabela/tabela.component';
 import { GraficoComponent } from './components/grafico/grafico.component';
 import { ToastComponent } from './components/toast/toast.component';
@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [RouterOutlet, TabelaComponent, GraficoComponent, ToastComponent]
+  imports: [RouterModule, RouterOutlet, TabelaComponent, GraficoComponent, ToastComponent] // Adicionado RouterModule
 })
 export class AppComponent {
   title = 'frontend';

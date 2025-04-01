@@ -181,12 +181,15 @@
   <h1 class="header-title">Smart Stock Management</h1>
   <nav>
     <ul class="nav-list">
-      <li><a href="#" class="nav-link">Home</a></li>
-      <li><a href="#" class="nav-link">Reports</a></li>
-      <li><a href="#" class="nav-link">Settings</a></li>
+      <li><a routerLink="/" class="nav-link">Home</a></li>
+      <li><a routerLink="/reports" class="nav-link">Reports</a></li>
+      <li><a routerLink="/settings" class="nav-link">Settings</a></li>
+      <li><a routerLink="/register" class="nav-link">Login</a></li> <!-- Adicionado o link de Login -->
     </ul>
   </nav>
 </header>
+
+
 
 <main class="container">
   <!-- <div class="language-buttons">
@@ -208,6 +211,8 @@
   <button (click)="toast.exibirMensagem('Product successfully registered!')" class="btn-primary">
     Test Toast
   </button>
+
+  <router-outlet></router-outlet>
 </main>
 
 <footer class="footer">
@@ -226,4 +231,4 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
-<router-outlet />
+
